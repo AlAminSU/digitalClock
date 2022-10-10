@@ -8,12 +8,18 @@ function getCurrentTimer() {
 
   Hours = Hours > 12 ? Hours - 12 : Hours;
 
-  updateHours = Hours < 10 ? "0" + Hours : Hours;
-  updateMinutes = Minutes < 10 ? "0" + Minutes : Minutes;
-  updateseconds = seconds < 10 ? "0" + seconds : seconds;
+  formattedHours = Hours < 10 ? "0" + Hours : Hours;
+  formattedMinutes = Minutes < 10 ? "0" + Minutes : Minutes;
+  formattedseconds = seconds < 10 ? "0" + seconds : seconds;
 
   let time =
-    updateHours + ":" + updateMinutes + ":" + updateseconds + ":" + midday;
+    formattedHours +
+    ":" +
+    formattedMinutes +
+    ":" +
+    formattedseconds +
+    ":" +
+    midday;
 
   document.getElementById("clock").innerText = time;
   const timer = setTimeout(function () {
